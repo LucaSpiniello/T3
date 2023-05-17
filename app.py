@@ -54,7 +54,7 @@ def recibir_transferencia():
     db.session.commit()
     return '', 204  
 
-dash_app = dash.Dash(__name__, server=app, url_base_pathname='/dashboard/', external_stylesheets=[dbc.themes.BOOTSTRAP])
+dash_app = dash.Dash(__name__, server=app, url_base_pathname='/', external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 def serve_layout():
     min_date = db.session.query(Transaction.publish_time).order_by(Transaction.publish_time.asc()).first()
@@ -220,6 +220,3 @@ def update_histogram(pathname, source_bank, destination_bank, date):
     return fig
 
 
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
