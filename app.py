@@ -7,7 +7,7 @@ import dash
 from dash import dash_table
 import dash_bootstrap_components as dbc
 from dash import dcc
-import dash_html_components as html
+from dash import html
 from dash.dependencies import Input, Output
 import plotly.express as px
 import pandas as pd
@@ -223,7 +223,3 @@ def update_histogram(pathname, source_bank, destination_bank, date):
 @app.route('/')
 def hello_world():
     return 'Hello, World!'
-
-
-if __name__ == "__main__":    
-    app.run(port=5000)
